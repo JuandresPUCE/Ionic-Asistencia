@@ -1,15 +1,37 @@
-import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonIcon } from '@ionic/react';
-import { person, lockClosed, card } from 'ionicons/icons';
-import './Tab3.css';
+import React, { useState, useEffect } from "react";
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonIcon,
+} from "@ionic/react";
+import { person, lockClosed, card } from "ionicons/icons";
+import "./Tab3.css";
 
-const users = [
-  { id: 1, username: 'Fulano', password: '*****', cedula: '###' },
-  { id: 2, username: 'Usuario2', password: '******', cedula: '###' },
-  { id: 3, username: 'Usuario3', password: '******', cedula: '###' },
-];
+import { User } from "./../models/user.model";
+import UserItem from "../components/userItem";
+import axios from "axios";
 
 const Tab3: React.FC = () => {
+  const [users, setUser] = useState<User[]>([]);
+  const conrsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+  const myUrl = 'http://40.75.120.104/apiweb/';
+
+  const fetchData = () => {
+    return axios
+      .get(conrsAnywhere + myUrl)
+      .then((response) => setUser(response.data));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <IonPage>
       <IonHeader>
@@ -19,25 +41,8 @@ const Tab3: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <IonList>
-          {users.map((user) => (
-            <IonItem key={user.id}>
-              <IonLabel>
-                <IonLabel style={{ display: 'flex', flexDirection: 'column' }}>
-                  <IonLabel style={{ display: 'flex', alignItems: 'center' }}>
-                    <IonIcon slot="start" icon={person} />
-                    <span>Usuario: {user.username}</span>
-                  </IonLabel>
-                  <IonLabel style={{ display: 'flex', alignItems: 'center' }}>
-                    <IonIcon slot="start" icon={lockClosed} />
-                    <span>Contraseña: {user.password}</span>
-                  </IonLabel>
-                  <IonLabel style={{ display: 'flex', alignItems: 'center' }}>
-                    <IonIcon slot="start" icon={card} />
-                    <span>Cédula: {user.cedula}</span>
-                  </IonLabel>
-                </IonLabel>
-              </IonLabel>
-            </IonItem>
+          {users.map((user, idx) => (
+            <UserItem key={idx} user={user} />
           ))}
         </IonList>
       </IonContent>
