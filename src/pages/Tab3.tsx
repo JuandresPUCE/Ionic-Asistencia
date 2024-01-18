@@ -21,9 +21,11 @@ const Tab3: React.FC = () => {
   const [users, setUser] = useState<User[]>([]);
   const conrsAnywhere = 'https://cors-anywhere.herokuapp.com/';
   const myUrl = 'http://40.75.120.104/apiweb/';
+  //const myUrl = 'https://raw.githack.com/JuandresPUCE/Api_python_SQLite/main/database/guitars.json'
 
   const fetchData = () => {
     return axios
+    //.get('https://raw.githack.com/JuandresPUCE/Api_python_SQLite/main/database/guitars.json')
       .get(conrsAnywhere + myUrl)
       .then((response) => setUser(response.data));
   };
