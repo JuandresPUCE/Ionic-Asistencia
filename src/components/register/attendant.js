@@ -81,9 +81,20 @@ export default function Attendant(){
 
     return(
         <div>
+                <br />
+          <center>
+            <img
+              alt="Login"
+              src="/assets/images/attendant.jpg"
+              style={{ width: "25%", height: "25%" }}
+            />
+          </center>
+          <br />
+
           <Form>
             <center>
               <h2>Bienvenido</h2>
+              
               <br/>
               <h2>{name} {lastname}</h2>
             </center>
@@ -118,7 +129,7 @@ export default function Attendant(){
                 </Link>
           
             </center>
-          </Form>
+          </Form>         
         </div>
     )
 }

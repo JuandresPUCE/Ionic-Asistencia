@@ -31,6 +31,16 @@ const Tab3: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+      <br />
+          <center>
+            <img
+              alt="Login"
+              src="/assets/images/users.jpg"
+              style={{ width: "25%", height: "25%" }}
+            />
+          </center>
+          <br />
+
       <br/>
         <center>
           <h3>Lista de Usuarios</h3>

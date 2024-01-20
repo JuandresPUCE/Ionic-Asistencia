@@ -35,7 +35,7 @@ export default function Read(){
                         <IonCol push-sm="6">{data.record}</IonCol>
                         <IonCol push-sm="6">{data.names}</IonCol>
                         <IonCol push-sm="6">{data.lastnames}</IonCol>
-                    </IonRow>
+                    </IonRow>                  
                 )
             })}
             </IonGrid>
