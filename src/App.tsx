@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -8,13 +9,14 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-  setupIonicReact
+  setupIonicReact,IonButton
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { arrowUpCircle, people, fileTrayFull } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import Tab5 from './pages/Tab5';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -50,6 +52,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/tab3">
             <Tab3 />
+          </Route>
+          <Route path="/tab5">
+            <Tab5 />
           </Route>
           <Route exact path="/">
             <Redirect to="/tab1" />

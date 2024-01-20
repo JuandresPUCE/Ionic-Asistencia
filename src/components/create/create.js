@@ -1,5 +1,6 @@
 import React, { useState} from "react";
 import {Form, Button } from 'semantic-ui-react';
+import './create.css';
 
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
     IonCard,  IonCardHeader, 
@@ -7,6 +8,8 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
     IonList, IonItem, IonInput,
     IonButton, IonIcon,
     IonModal, IonButtons} from '@ionic/react';
+
+import { call, card, mail, person } from "ionicons/icons";
 
 import 'semantic-ui-css/semantic.min.css'
 
@@ -83,14 +86,16 @@ export default function Create(){
         <div>
           <Form>
             <Form.Field>
-              <label>Cédula *</label>
+            <IonIcon slot="start" icon={card} />
+              <label className="breathing-label">Cédula *</label>
               <input name="id"
                 maxLength={10}
                 onChange={(e) => setId(e.target.value)} 
                 placeholder='Cédula' />
             </Form.Field>
             <Form.Field>
-              <label>Nombres *</label>
+            <IonIcon slot="start" icon={person} />
+              <label className="breathing-label">Nombres</label>
               <input name="name"
                 maxLength={100}
                 minLength={3}
@@ -98,7 +103,8 @@ export default function Create(){
                 placeholder='Nombres' />
             </Form.Field>
             <Form.Field>
-              <label>Apellidos *</label>
+            <IonIcon slot="start" icon={person} />
+              <label className="breathing-label">Apellidos</label>
               <input name="lastname"
                 maxLength={100}
                 minLength={3}
@@ -106,7 +112,8 @@ export default function Create(){
                 placeholder='Apellidos' />
             </Form.Field>
             <Form.Field>
-              <label>E-mail *</label>
+            <IonIcon slot="start" icon={mail} />
+              <label className="breathing-label">E-mail</label>
               <input name="email"
                 maxLength={100}
                 minLength={10}
@@ -115,7 +122,8 @@ export default function Create(){
                 placeholder='E-mail' />
             </Form.Field>
             <Form.Field>
-              <label>Celular *</label>
+            <IonIcon slot="start" icon={call} />
+              <label className="breathing-label">Celular</label>
               <input name="mobile"
                 maxLength={10}
                 minLength={10}
@@ -123,7 +131,7 @@ export default function Create(){
                 placeholder='Celular' />
             </Form.Field>
                 <center>
-                    <Button color="green" type='submit' onClick={sendDataToApi}>Guardar</Button>
+                    <Button color="blue" type='submit' onClick={sendDataToApi}>Guardar</Button>
                     <Link to = '/Tab1'>
                         <Button >Cancelar</Button>
                     </Link>

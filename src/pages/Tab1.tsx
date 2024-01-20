@@ -16,6 +16,7 @@ import {
 } from "@ionic/react";
 import "./Tab1.css";
 import { arrowForward, lockClosed, person } from "ionicons/icons";
+import Login from "../components/login/login";
 
 const Tab1: React.FC = () => {
   return (
@@ -38,43 +39,7 @@ const Tab1: React.FC = () => {
           <br />
 
           <IonCardContent>
-            <IonRow className="ion-align-items-center">
-              <IonCol size="auto">
-                <IonIcon
-                  aria-hidden="true"
-                  icon={person}
-                  size="small"
-                  style={{ marginRight: "8px" }}
-                />
-              </IonCol>
-              <IonCol>
-                <IonInput placeholder="Usuario" maxlength={20}></IonInput>
-              </IonCol>
-            </IonRow>
-
-            <IonRow className="ion-align-items-center" style={{ marginTop: "10px" }}>
-              <IonCol size="auto">
-                <IonIcon
-                  aria-hidden="true"
-                  icon={lockClosed}
-                  size="small"
-                  style={{ marginRight: "8px" }}
-                />
-              </IonCol>
-              <IonCol>
-                <IonInput
-                  placeholder="Contraseña"
-                  type="password"
-                  value=""
-                ></IonInput>
-              </IonCol>
-            </IonRow>
-
-            <IonButton expand="block" shape="round" style={{ textTransform: 'none' }}>
-              Ingresar
-              <IonIcon slot="start" icon={arrowForward}></IonIcon>
-            </IonButton>
-
+          <Login/>
           </IonCardContent>
         </IonCard>
       </IonContent>

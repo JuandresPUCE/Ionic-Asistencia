@@ -17,36 +17,26 @@ import { User } from "./../models/user.model";
 import UserItem from "../components/userItem";
 import axios from "axios";
 
+import Read from "../components/read/read";
+
 const Tab3: React.FC = () => {
-  const [users, setUser] = useState<User[]>([]);
-  const conrsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-  const myUrl = 'http://40.75.120.104/apiweb/';
-  //const myUrl = 'https://raw.githack.com/JuandresPUCE/Api_python_SQLite/main/database/guitars.json'
-
-  const fetchData = () => {
-    return axios
-    //.get('https://raw.githack.com/JuandresPUCE/Api_python_SQLite/main/database/guitars.json')
-      .get(conrsAnywhere + myUrl)
-      .then((response) => setUser(response.data));
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Lista de Usuarios--Muestra Demo</IonTitle>
+        <center>
+          <IonTitle>Lista de Usuarios</IonTitle>
+          </center>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonList>
-          {users.map((user, idx) => (
-            <UserItem key={idx} user={user} />
-          ))}
-        </IonList>
+      <IonContent>
+      <br/>
+        <center>
+          <h3>Lista de Usuarios</h3>
+        </center>
+        <br/>
+        <Read/>
       </IonContent>
     </IonPage>
   );

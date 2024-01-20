@@ -1,0 +1,17 @@
+@keyframes breathe {
+    0%, 100% {
+      color: initial; 
+    }
+    50% {
+      color: #ff0303; 
+    }
+  }
+  
+  .breathing-label {
+    animation: breathe 0.1s infinite alternate;
+  }
+
+  .custom-input-field input {
+    background-color: #222222;
+    color: #d7d7d7;
+  }
