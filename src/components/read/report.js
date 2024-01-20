@@ -39,20 +39,18 @@ export default function Report(){
                 <h2>Registro de Asistencia</h2>
             </center>
             <IonGrid>
-                <IonRow>
-                <center>
-                    <IonCol push-sm="6">FECHA</IonCol>
-                    <IonCol push-sm="6">HORA</IonCol>
-                </center>
-                </IonRow>
+
             {apiData.map((data) => {
                 return (
                     <IonRow key={data.record}>
+                        <div>
                         <center>
+                        <IonCol push-sm="6">Fecha: </IonCol>
                         <IonCol push-sm="6">{data.date}</IonCol>
+                        <IonCol push-sm="6">Hora: </IonCol>
                         <IonCol push-sm="6">{data.time}</IonCol>
-                        <IonCol push-sm="6">{data.lastname}</IonCol>
                         </center>
+                        </div>
                     </IonRow>
                 )
             })}

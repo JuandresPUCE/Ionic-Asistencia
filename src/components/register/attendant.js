@@ -116,7 +116,7 @@ export default function Attendant(){
                 <Link to = '/Tab1'>
                     <Button >Cancelar</Button>
                 </Link>
-                
+          
             </center>
           </Form>
         </div>
